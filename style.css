@@ -1,0 +1,817 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+}
+
+#header {
+    width: 100%;
+    height: 30%;
+    position: fixed;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    z-index: 1000000; /* Ensure header is above other content */
+}
+
+#star {
+    width: 200px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 20s linear infinite;
+}
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+.circle-text {
+    width: 100%;
+    height: 100%;
+}
+
+.circle-text text {
+    fill: white;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.logo-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 45px;
+}
+
+#text{
+    width: 27%;
+    height: 70%;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 650px;
+}
+#box1{
+    width:40%;
+    height: 100%;
+    color: #ffffff;
+}
+
+#box1:hover{
+    color: rgb(153, 150, 150);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 1px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    display: block;
+    position: relative; /* Needed for positioning the hover text */
+    height: 1.2em; /* Set a fixed height to prevent content shifting */
+    overflow: hidden; /* Hide overflowing text */
+}
+
+.menu-item .text-original {
+    display: block;
+    transition: transform 0.9s ease-out, opacity 0.9s ease-out;
+    color: white;
+}
+
+.menu-item .text-hover {
+    display: block;
+    position: absolute;
+    top: 100%; /* Start below the visible area */
+    left: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    color: grey; /* Default color for the hover text */
+    opacity: 0;
+}
+
+/* When the menu item is hovered */
+.menu-item.hovered .text-original {
+    transform: translateY(-100%); /* Move original text up */
+    opacity: 0; /* Fade out original text */
+    color: grey; /* Change color of original text when hovered */
+}
+
+.menu-item.hovered .text-hover {
+    transform: translateY(-100%); /* Move hover text up to original position */
+    opacity: 1; /* Make hover text visible */
+    color: white; /* Change color of hover text when visible */
+}
+
+#box2{
+    align-items: center;
+    width:70%;
+    height: 100%;
+    transition: transform 5.0s ease-in-out;
+}
+
+#box2 p:hover{
+    transform: translateX(6px);
+}
+
+
+
+#fakeheader {
+    width: 100%;
+    height: 45%;
+    background-color: rgb(0, 0, 0);
+}
+
+#page1 {
+    width: 100%;
+    height: 120%;
+    background-color: rgb(0, 0, 0);
+}
+
+#page1box{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+#pbox1{
+    height: 100%;
+    width: 75%;
+    background-color: rgb(0, 0, 0);
+}
+
+#pbox1 p {
+    color: #ffffff;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    margin-left: 35px;
+    font-size: 130px;
+}
+
+#pbox2{
+    height: 100%;
+    width: 30%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: end;
+    justify-content: right;
+}
+
+
+.sticky-text-container {
+    color: #ffffff;
+   
+    position: relative; /* Important for 'sticky' to work correctly within its flow */
+    height: 100%; /* Make this container as tall as the first page for the text to stick */
+    display: flex; /* Use flex to position the text inside the container */
+    align-items: flex-end; /* Align the text to the bottom of its container */
+    justify-content: flex-end; /* Align the text to the right of its container */
+    padding: 20px; /* Padding for the container */
+    box-sizing: border-box;
+    width: 60%; /* Adjust width to control its horizontal space */
+    margin-bottom: 40px;
+}
+
+.sticky-text {
+    position: sticky; /* Make the element sticky */
+    top: 50px; /* It will stick 50px from the top of the viewport when scrolled */
+
+    /* Let's try 'bottom' to make it stick to the bottom right as seen */
+    bottom: 50px; /* It will stick 50px from the bottom of the viewport */
+    margin-bottom: 50px;
+    
+}
+
+.circletext{
+  animation: rotateCircle 10s linear infinite;
+  transform-origin: center;
+}
+ 
+#page2 {
+    width: 100%;
+    height: 65%;
+    background-color: rgb(0, 0, 0);
+}
+#p2box{
+    width: 90%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+#p2box1{
+    margin-top: 95px;
+    margin-left: 50px;
+    font-size: small;
+    margin-bottom: 20px;
+}
+
+
+/* ── simple scroll-reveal effect ────────────── */
+.reveal {
+  opacity: 0;                 /* invisible at start          */
+  transform: translateY(40px);/* and pushed 40 px downward    */
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+
+.reveal.show {                /* class added by JS            */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+#p2box2{
+    width: 20%;
+    font-family:'Cormorant Garamond';
+    margin-left: 50px;
+    font-size: 65px;
+}
+
+#p2box3{
+    width: 50%;
+    height: 15%;
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: medium;
+    color: #ffffff;
+}
+
+
+#page3{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+#p3box{
+    height: 85%;
+    width: 100%;
+    color: #333;
+}
+
+
+/* Add this to your style.css */
+.project {
+    height: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    transition: transform 0.3s ease; /* Add transition for smooth movement */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.project:hover {
+    transform: translateY(-5px); /* Move the project up slightly on hover */
+    color: white; /* Change text color on hover */
+}
+
+.project:hover .right {
+    color: white; /* Change right text color on hover */
+}
+
+.project:hover .line {
+    background: white; /* Change line color on hover */
+}
+
+.left {
+    flex: 0.7;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.right {
+    color: #bbb;
+    white-space: nowrap;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.line {
+    flex: 1;
+    height: 2px;
+    background: #333;
+    transition: background 0.3s ease; /* Smooth background transition */
+}
+
+
+
+.left {
+  flex:0.7;
+  
+}
+
+.line {
+  flex: 1;
+  height: 2px;
+  background: #333;
+}
+
+
+.right {
+  color: #bbb;
+  white-space: nowrap;
+}
+
+.year {
+    margin-right: 460px;
+}
+
+#l4{
+    flex:0.2;
+}
+#l5{
+    flex:0.3;
+}
+#l6{
+    flex:0.3;
+}
+#l7{
+    flex:0.3;
+}
+#l8{
+    flex:0.4;
+}
+
+.see-projects span {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-left: 10px;
+}
+
+.see-projects {
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      text-decoration: none;
+      display: inline-block;
+      border-bottom: 2px solid white;
+      padding-bottom: 2px;
+      transition: all 0.3s ease;
+      margin-left: 300px;
+}
+
+    .see-projects:hover {
+      color: #ccc;
+      border-color: #ccc;
+    }
+.see-projects span {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-left: 1px;
+      margin-bottom: 2px;
+    }
+
+    .arrow {
+      font-size: 500px;
+      margin-right: 8px;
+    }
+
+
+    /** page3 will  end **/ 
+
+#page4{
+    width: 100%;
+    height: 150%;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+#img{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    background-color: #333;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: cover;
+    overflow:hidden;
+}
+
+
+         /*page5*/
+
+#page5{
+    width: 100%;
+    height: 265%;
+    background-color: rgb(0, 0, 0);
+}
+
+/* ==========  SERVICES SECTION  ========== */
+#services{
+  display:flex;
+  gap:4rem;
+  max-width:1200px;
+  margin-left: 30px;
+  padding:9rem 1rem;         /* breathing room above/below   */
+}
+
+.services-left small{
+    margin-top: 20px;
+}
+
+.services-left{
+  flex:3;
+  position:sticky;
+  top:200px;        /* sticks 100 px from viewport top */
+  bottom: 50px;
+  margin-bottom: 200px;
+  align-self:flex-start;
+  color:#ffffff;
+}
+
+.services-title{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(3rem,7vw,6rem);
+  margin:.2em 0 .4em;
+}
+
+.services-right{
+    flex:2;
+    margin: 0%;
+
+}
+
+.service{
+  min-height:45vh;          /* one full-screen card         */
+  display:flex;
+  align-items:center;
+  opacity:0;                 /* invisible until revealed     */
+  transform:translateY(60px);
+  transition:opacity .6s ease-out, transform .6s ease-out;
+}
+
+.service.show{               /* added by JS                  */
+  opacity:1;
+  transform:translateY(0);
+}
+
+img{
+    object-fit: cover;
+    overflow: hidden;
+}
+
+
+.service .icon{
+    margin-left: 300px;
+    background-color: aqua;
+    width: 400px;
+    height: 150px;
+    object-fit: cover;
+    overflow: hidden;
+
+}
+
+.txt p{
+    color: #ffffff;
+}
+
+.service .txt h3{
+  line-height:1.25;
+  margin-bottom:.5rem;
+  color: #ffffff;
+}
+
+@media(max-width:790px){
+  #services{flex-direction:column;}
+  .services-left{position:relative;top:auto;}
+  .service{min-height:60vh;}
+}
+
+.service h3{
+    font-size:23px;
+}
+
+.service p{
+    font-size:14px;
+    margin-right: 90px;
+} 
+
+.service .icon4{
+    margin-left: 300px;
+    background-color: #000000; 
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+    overflow: hidden;
+    padding: 20px;
+    margin-right: -10px;
+
+}
+
+.service .icon5{
+    margin-left: 300px;
+    background-color: rgb(0, 0, 0);
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+    overflow: hidden;
+
+}
+
+             /**page6**/
+
+#page6{
+    width: 100%;
+    height: 130%;
+    background-color: #000000;
+}
+
+#strip{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.banner {
+  background: black; /* Purple gradient */
+  color: white;
+  overflow: hidden;
+  padding: 12px 0;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.marquee {
+  display: flex;
+  width: fit-content;
+  animation: scrollLoop 15s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 70px;
+  padding-right: 100px;
+  white-space: nowrap;
+}
+
+.dot {
+  margin: 0 10px;
+  color: #ffcc00;
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+#p6box1{
+    width: 100%;
+    height: 70%;
+    display: flex;
+}
+
+#p6box1 img{
+    margin: 40px;
+    border-radius: 20px;
+    
+}
+
+#page7{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(0, 0, 0);
+    
+}
+
+#p7box1{
+    color: #ffffff;
+    margin-top: 130px;
+    margin-left: 60px;
+    margin-right: 600px;
+}
+
+#p7box1 h2{
+    font-size: xxx-large;
+    font-weight: 50px;
+    font-family: Playfair Display';
+}
+
+#p7box1 p{
+    margin-top: 50px;
+    font-size: large;
+}
+
+#p7box1 h6{
+    font-size: large;
+    margin-top: 50px;
+}
+
+#p7box1 h4{
+    font-size:large;
+    margin-top: 50px;
+}
+
+
+#page8{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(0, 0, 0);
+}
+
+.p8mainbox{
+    display: flex;
+    color: #ffffff;
+}
+
+.p8mainbox h1{
+    font-size: 180px;
+}
+
+.p8mainbox h2{
+    margin-left: px;
+    margin-top: 100px;
+    font-size: 30px;
+}
+
+.p8mainbox h6{
+    font-size: 20px;
+}
+
+#p8box1{
+    margin: 30px;
+    margin-top: 15px;
+    margin-left: 70px;
+}
+
+#p8box2{
+    margin: 60px;
+    margin-top: 15px;
+    margin-left: 90px;
+}
+#p8box3{
+    margin: 30px;
+    margin-top: 15px;
+    margin-left: 70px;
+}
+#p8box4{
+    margin: 30px;
+    margin-top: 15px;
+    margin-left: 70px;
+}
+
+#page9{
+    width: 100%;
+    height: 85%;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+}
+
+#page9 h1{
+    width: 80%;
+    height: 10%;
+    margin-top: 40px;
+    margin-left:40px;
+    font-size: 60px;
+    margin-bottom: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.p9mbox h2{
+    width: 47%;
+    height: 14%;   
+    font-size: medium;
+    margin-left: 40px;
+    margin-right: 60%;
+    margin-bottom: 80px;
+}
+
+.p9box{
+    color: #333;
+    width: 80%;
+    height: 10%;
+    margin-left: 40px;
+    margin-top: 30px;
+    display: flex;
+    cursor: pointer;
+}
+
+.p9box:hover{
+    color: #ffffff;
+    margin: 31px;
+}
+
+.p9box h6{
+    width: 13%;
+    height: 10%;
+    font-size:medium;
+    margin-right: 30px;
+}
+
+.p9box p{
+    font-size: 20px;
+    font-weight: 200px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#page10{
+    width: 100%;
+    height: 60%;
+    color: #ffffff;
+    background-color: #000000;
+    margin-left: 40px;
+}
+
+#p10mainbox{
+    display: flex;
+    cursor: pointer;
+}
+
+#p10mainbox1{
+    font-size: large;
+}
+
+#p10mainbox2{
+    font-size: medium;
+}
+
+#p10box{
+    margin-top: 200px;
+    display: flex;
+}
+
+#p10box1{
+    
+    font-size: 25px;
+    margin-right: 450px;
+    
+}
+
+#p10box2{
+    display: flex;
+    align-items: end;
+    cursor: pointer;
+    
+}
+
+.button1{
+    background-color: #120f0f;
+    padding: 13px;
+    border-radius: 19px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.button2{
+    background-color:#120f0f;
+    padding: 13px;
+    border-radius: 19px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.circlebtn{
+    padding: 13px;
+    background-color: #120f0f;
+    border-radius: 50%;
+    cursor: pointer;
+}
