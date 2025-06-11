@@ -604,17 +604,41 @@ img{
 }
 
 
-#p6box1{
-    width: 100%;
-    height: 70%;
-    display: flex;
+
+/* ——  HORIZONTAL GALLERY  ——  */
+.horizontal-scroll-section { position: relative; }
+
+.sticky-container {
+  top: 0;                 /* pin it to the top of viewport */
+  height: 100vh;          /* full-viewport height */
+  overflow: hidden;       /* hide the overflow when we translate X */
 }
 
-#p6box1 img{
-    margin: 40px;
-    border-radius: 20px;
-    
+.image-gallery {
+  display: flex;
+  list-style: none;
+  height: 100%;           /* same height as the viewport */
+  transition: transform .1s ease-out;  /* smooth the movement a bit */
 }
+
+.image-gallery img {
+  width: 45vw;           /* each image = viewport width */
+  height: 100%;           /* scale to fill height */
+  object-fit: cover;
+  flex-shrink: 0;         /* prevent the images from shrinking */
+  filter: brightness(.85);
+  border-radius: 10px;
+}
+
+.image-gallery li{
+    margin: 15px;
+    margin-left: 40px;
+    margin-top: 70px;
+
+}
+
+
+
 
 #page7{
     width: 100%;

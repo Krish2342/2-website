@@ -66,5 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
   cards.forEach(card => showOnScroll.observe(card));
 });
 
+            /**page6 starting */
 
+const section  = document.querySelector('.horizontal-scroll-section');
+const gallery  = document.querySelector('.image-gallery');
 
+// Make the section tall enough to allow scrolling
+const extraScroll = gallery.scrollWidth - innerWidth;
+section.style.height = innerHeight + extraScroll + 'px';
+
+addEventListener('scroll', () => {
+  const top = section.getBoundingClientRect().top;
+  const progress = Math.min(Math.max(-top / extraScroll, 0), 1);
+  gallery.style.transform = `translateX(${-progress * extraScroll}px)`;
+});
+              
