@@ -64,7 +64,7 @@ html, body {
 .circle-text text {
     fill: white;
     font-size: 30px;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
 
 .logo-icon {
@@ -147,6 +147,7 @@ nav ul li a {
     width:70%;
     height: 100%;
     transition: transform 5.0s ease-in-out;
+    cursor: pointer;
 }
 
 #box2 p:hover{
@@ -615,6 +616,7 @@ img{
 }
 
 .image-gallery {
+    position: sticky;
   display: flex;
   list-style: none;
   height: 100%;           /* same height as the viewport */
@@ -643,7 +645,6 @@ img{
 #page7{
     width: 100%;
     height: 80%;
-    background-color: rgb(0, 0, 0);
     
 }
 
@@ -679,7 +680,6 @@ img{
 #page8{
     width: 100%;
     height: 80%;
-    background-color: rgb(0, 0, 0);
 }
 
 .p8mainbox{
@@ -726,7 +726,6 @@ img{
 #page9{
     width: 100%;
     height: 85%;
-    background-color: rgb(0, 0, 0);
     color: #ffffff;
 }
 
@@ -781,7 +780,6 @@ img{
     width: 100%;
     height: 60%;
     color: #ffffff;
-    background-color: #000000;
     margin-left: 40px;
 }
 
@@ -825,6 +823,19 @@ img{
     cursor: pointer;
 }
 
+.button1:hover{
+    background: #333;
+}
+
+.button2:hover{
+    background: #333;
+}
+
+.circlebtn:hover{
+    background: #333;
+}
+
+
 .button2{
     background-color:#120f0f;
     padding: 13px;
@@ -838,4 +849,121 @@ img{
     background-color: #120f0f;
     border-radius: 50%;
     cursor: pointer;
+}
+.banner{
+    background-color: #120f0f;
+     
+}
+
+
+ /**callender**/
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000001; /* Sit on top (higher than header) */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+}
+
+.modal-content {
+    background-color: #000;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 90%; /* Adjusted for better responsiveness */
+    max-width: 900px; /* Increased max-width for better calendar display */
+    position: relative;
+    color: white;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* FullCalendar specific adjustments for dark theme */
+.fc .fc-button-primary {
+    background-color: #333 !important;
+    border-color: #444 !important;
+    color: white !important;
+}
+
+.fc .fc-button-primary:hover {
+    background-color: #555 !important;
+}
+
+.fc .fc-daygrid-day-number {
+    color: white !important;
+}
+
+.fc .fc-col-header-cell-cushion {
+    color: #bbb !important;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+    background-color: #222 !important; /* Highlights today's date */
+}
+
+.fc-event {
+    background-color: #007bff !important; /* Example event color */
+    border-color: #007bff !important;
+}
+
+/* Other CSS styles ... */
+
+/* Styles for the social dropdown */
+.social-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #1a1a1a; /* Darker background for the dropdown */
+    min-width: 109px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px; /* Rounded corners for the dropdown */
+    padding: 9px 0;
+    right: 1px; /* Adjust as needed to position relative to circlebtn */
+    bottom: 60px; /* Adjust as needed to position above circlebtn */
+}
+
+.social-dropdown .dropdown-item {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border-radius: 8px; /* Rounded corners for individual items */
+}
+
+.social-dropdown .dropdown-item:hover {
+    background-color: #333; /* Hover effect for dropdown items */
+}
+
+/* Ensure #p10box2 has position: relative to correctly position the dropdown */
+#p10box2 {
+    display: flex;
+    align-items: end;
+    cursor: pointer;
+    position: relative; /* Add this to make dropdown positioning relative to this box */
 }
